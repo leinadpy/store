@@ -1,16 +1,17 @@
 import axios from "axios";
-import { Product } from "./types";
 import Papa from "papaparse";
 
-export const api = {
+import {INFORMATION} from "../app/constants";
+
+import {Product} from "./types";
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
   list: async (): Promise<Product[]> => {
     return axios
-      .get(
-        `https://docs.google.com/spreadsheets/d/e/2PACX-1vS2-cebqRd1t_hMufpJjGqCpP69XLGrX--9dYTOzHtzvB0VkNTToXU0bNdu5lH_Ak26OuS-uxLqwmwL/pub?output=csv`,
-        {
-          responseType: "blob",
-        }
-      )
+      .get(INFORMATION.sheet, {
+        responseType: "blob",
+      })
       .then(
         (response) =>
           new Promise<Product[]>((resolve, reject) => {
@@ -23,12 +24,16 @@ export const api = {
                   products.map((product) => ({
                     ...product,
                     price: Number(product.price),
-                  }))
+                  })),
                 );
               },
               error: (error) => reject(error.message),
             });
-          })
+          }),
       );
+  },
+  mock: {
+    list: (mock: string): Promise<Product[]> =>
+      import(`./mocks/${mock}.json`).then((result) => result.default),
   },
 };

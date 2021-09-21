@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![codecov](https://codecov.io/gh/goncy/store/branch/main/graph/badge.svg?token=XiTcCI2c18)](https://codecov.io/gh/goncy/store)
 
-## Getting Started
+---
 
-First, run the development server:
+# Almacency
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Tienda online administrada via Google Sheets.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como la uso?
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Crea una copia de [esta planilla de calculo](https://docs.google.com/spreadsheets/d/1Q_mDN1w88zE1vDasru-f3D6kxZAynUC1s253yLmjE7M/edit?usp=sharing).
+2. Una vez copiada, toca en `Archivo > Publicar en la web`, selecciona `Valores separados por comas (.csv)` del desplegable y clickea en `publicar`.
+3. Asegurate que en vez de `Pagina web` diga `Valores separados por comas (.csv)` y copia el enlace.
+4. Pega el enlace en [este archivo](./app/constants.ts) y completa los datos de tu tienda.
+5. Publica el sitio en [algun hosting que soporte NextJS](https://vercel.com)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Me gustaria ayudar
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Si pensas que podes agregar una funcionalidad que le sirva al resto, mandame un PR. Sino, podes mandarme un [cafecito](https://cafecito.app/goncy)
 
-## Learn More
+## ¿Qué puedo hacer con este repositorio?
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Podés leer la licencia [acá](./LICENSE.md). En resumen, podés usar este repositorio para lo que quieras mientras no lucres con eso y menciones la fuente original cuando lo uses 🥰.
